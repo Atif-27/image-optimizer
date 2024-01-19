@@ -43,8 +43,10 @@ export function Upload() {
           Authorization: `Bearer ${apiKey}`,
         },
       });
+
       if (!res.ok) {
-        throw new Error();
+        const errorData = await res.json();
+        throw new Error(errorData.message);
       }
       const optimizedImageBuffer = await res.arrayBuffer();
       console.log("Optimized Image Buffer:", optimizedImageBuffer);
@@ -56,8 +58,8 @@ export function Upload() {
         url: URL.createObjectURL(optimizedImageBlob),
         size: optimizedImageBlob.size,
       });
-    } catch (err) {
-      console.error("Error:", err as Error);
+    } catch (err: any) {
+      console.log("Error:", err.message);
     }
   }
   return (
