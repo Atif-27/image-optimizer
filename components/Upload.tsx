@@ -77,7 +77,7 @@ export function Upload() {
               alt="uploaded_image"
             />
             <p>Name: {file.name}</p>
-            <p>Size: {(file.size / 1024).toFixed(2)} MB</p>
+            <p>Size: {(file.size / 1024).toFixed(2)} KB</p>
           </div>
         )}
         {optimizedImage && (
@@ -89,7 +89,7 @@ export function Upload() {
               height={500}
               alt="uploaded_image"
             />{" "}
-            <p>Size: {(optimizedImage.size / 1024).toFixed(2)} MB</p>
+            <p>Size: {(optimizedImage.size / 1024).toFixed(2)} KB</p>
             <a
               className="bg-gray-500 w-max px-2 py-1 rounded-md"
               href={optimizedImage.url || ""}
