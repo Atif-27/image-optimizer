@@ -57,7 +57,7 @@ export function Upload() {
         size: optimizedImageBlob.size,
       });
     } catch (err) {
-      console.error("Error:", err.message);
+      console.error("Error:", err as Error);
     }
   }
   return (
